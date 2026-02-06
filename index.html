@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dungeon</title>
+  <style>
+    #maze {
+      width: 1800px;
+      height: 1200px;
+      touch-action: none;
+    }
+    #START {
+      position: absolute;
+      left: 400px;
+      top: 400px;
+    }
+  </style>
+</head>
+
+<body onload="init()">
+  <audio src="had.mp3" id="bgm" loop></audio>
+
+  <canvas id="maze" width="1800" height="1200"></canvas>
+  <img id="START" src="start.png" onclick="go()"><br>
+  <img id="arrows" src="arrows.png" style="display: none">
+
+  <img id="hero0" src="hero0.png" style="display: none">
+  <img id="hero1" src="hero1.png" style="display: none">
+  <img id="hero2" src="hero2.png" style="display: none">
+  <img id="hero3" src="hero3.png" style="display: none">
+  <img id="alien0" src="alien0.png" style="display: none">
+  <img id="alien1" src="alien1.png" style="display: none">
+  <img id="alien2" src="alien2.png" style="display: none">
+  <img id="alien3" src="alien3.png" style="display: none">
+
+  <!-- ★ここでJSを読み込む -->
+  <script src="main.js"></script>
+</body>
+</html>
