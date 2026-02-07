@@ -190,7 +190,7 @@ function createMaze(w, h) {
 function drawCircle(x, y, r, color) {
   ctx.fillStyle = color;
   ctx.beginPath();
-   ctx.rect(x, y, 0, 0);
+ctx.rect(x - r, y - r, r * 2, r * 2);
   ctx.fill();
 }
 
@@ -200,7 +200,7 @@ function repaint() {
 
   ctx.save();
   ctx.beginPath();
-  ctx.rect(x, y, 0, 0);
+ctx.rect(x - r, y - r, r * 2, r * 2);
   ctx.clip();
 
   ctx.fillStyle = "brown";
