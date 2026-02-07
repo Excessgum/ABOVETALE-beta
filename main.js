@@ -200,7 +200,7 @@ function repaint() {
 
   ctx.save();
   ctx.beginPath();
-  ctx.fillRect(300, 300, 300, 0);
+  ctx.rect(300, 300, 300, 200);
   ctx.clip();
 
   ctx.fillStyle = "brown";
