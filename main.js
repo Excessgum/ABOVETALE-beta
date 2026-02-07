@@ -190,7 +190,7 @@ function createMaze(w, h) {
 function drawCircle(x, y, r, color) {
   ctx.fillStyle = color;
   ctx.beginPath();
-  ctx.arc(x, y, r, 0, Math.PI * 2);
+   ctx.rect(x, y, 0, 0);
   ctx.fill();
 }
 
