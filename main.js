@@ -195,29 +195,25 @@ function drawCircle(x, y, r, color) {
 }
 
 function repaint() {
- ctx.fillStyle = "black";
-ctx.fillRect(0, 0, 900, 600);
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, 900, 600);
 
-ctx.save();   // ★いちばん最初に保存！
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(x, y, 0, 0);
+  ctx.clip();
 
-ctx.translate(6 * 50, 6 * 50);
-ctx.translate(-player.getScrollX(), -player.getScrollY());
+  ctx.fillStyle = "brown";
+  ctx.translate(6 * 50, 6 * 50);
+  ctx.translate(-player.getScrollX(), -player.getScrollY());
 
-ctx.beginPath();
-ctx.rect(300, 300, 300, 200);
-ctx.clip();
-
-ctx.fillStyle = "brown";
-for (let x = 0; x < W; x++) {
-  for (let y = 0; y < H; y++) {
-    if (maze[y][x] == 1) {
-      ctx.fillRect(x * 50, y * 50, 50, 50);
+  for (let x = 0; x < W; x++) {
+    for (let y = 0; y < H; y++) {
+      if (maze[y][x] == 1) {
+        ctx.fillRect(x * 50, y * 50, 50, 50);
+      }
     }
   }
-}
-
-ctx.restore();  // ★これ超重要！！
-
 
   aliens.forEach(a => a.paint(ctx, 50, 50));
   ctx.restore();
